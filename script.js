@@ -67,15 +67,15 @@ function setupCanvas() {
 }
 
 function createSnowflakes() {
-  const count = window.innerWidth < 768 ? 50 : 100;
+  const count = window.innerWidth < 768 ? 80 : 150;
   snowflakes = [];
   for (let i = 0; i < count; i++) {
     snowflakes.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 3 + 1,
-      speed: Math.random() * 1 + 0.5,
-      drift: Math.random() * 0.5 - 0.25,
+      radius: Math.random() * 4 + 1,
+      speed: Math.random() * 2 + 1.5,
+      drift: Math.random() * 0.8 - 0.4,
     });
   }
 }

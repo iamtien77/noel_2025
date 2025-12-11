@@ -22,8 +22,8 @@ body {
     position: relative;
 }
 
-/* ===================== VIDEO BACKGROUND ===================== */
-.video-background {
+/* ===================== IMAGE BACKGROUND ===================== */
+.image-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -31,34 +31,18 @@ body {
     height: 100%;
     overflow: hidden;
     z-index: 0;
-    /* Đặt thấp hơn canvas tuyết và nội dung */
 }
 
-#christmasVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
-.video-overlay {
+#christmasBackground {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    /* Lớp mờ nhẹ để chữ rõ hơn */
-    pointer-events: none;
-    z-index: 1;
+    object-fit: cover;
 }
 
-/* Đẩy nội dung lên trên video */
+/* Đẩy nội dung lên trên background */
 .container,
 .controls,
 #snowCanvas,
@@ -66,8 +50,6 @@ body {
     position: relative;
     z-index: 2;
 }
-
-/* Nếu vẫn muốn giữ tuyết rơi thì để, không thì tắt luôn cũng được */
 
 /* ===================== CANVAS TUYẾT RƠI ===================== */
 #snowCanvas {
@@ -77,7 +59,179 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 5;
+}
+
+/* ===================== MẶT TRĂNG ===================== */
+.moon-decoration {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.moon-img {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    animation: moonGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow {
+    0% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    }
+    100% {
+        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.9));
+    }
+}
+
+/* ===================== TEXT MERRY CHRISTMAS ===================== */
+.merry-text {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.merry-text-img {
+    width: 400px;
+    height: auto;
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.4));
+    animation: textFloat 2s ease-in-out infinite;
+}
+
+@keyframes textFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ===================== ÔNG GIÀ NOEL VỚI QUÀ (TRÁI) ===================== */
+.left-decoration {
+    position: fixed;
+    left: 20px;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.santa-gifts-img {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* ===================== CÂY THÔNG (TRÁI) ===================== */
+.pine-tree-decoration {
+    position: fixed;
+    left: 180px;
+    bottom: 0;
+    z-index: 8;
+    pointer-events: none;
+}
+
+.pine-tree-img {
+    width: 250px;
+    height: auto;
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ===================== NGÔI NHÀ (PHẢI) ===================== */
+.house-decoration {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    pointer-events: none;
+}
+
+.house-img {
+    width: 450px;
+    height: auto;
+    filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+/* ===================== ÔNG GIÀ NOEL CHẠY (PHẢI) ===================== */
+.santa-running {
+    position: fixed;
+    right: 350px;
+    bottom: 20px;
+    z-index: 12;
+    pointer-events: none;
+}
+
+.santa-running-img {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+    animation: santaRun 0.5s steps(2) infinite;
+}
+
+@keyframes santaRun {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1200px) {
+    .house-img {
+        width: 350px;
+    }
+    .santa-running {
+        right: 280px;
+    }
+    .pine-tree-img {
+        width: 200px;
+    }
+    .pine-tree-decoration {
+        left: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .moon-img {
+        width: 60px;
+    }
+    .moon-decoration {
+        right: 20px;
+        top: 70px;
+    }
+    .merry-text-img {
+        width: 250px;
+    }
+    .santa-gifts-img {
+        width: 120px;
+    }
+    .left-decoration {
+        left: 10px;
+    }
+    .pine-tree-img {
+        width: 150px;
+    }
+    .pine-tree-decoration {
+        left: 100px;
+    }
+    .house-img {
+        width: 250px;
+    }
+    .santa-running {
+        right: 180px;
+        bottom: 10px;
+    }
+    .santa-running-img {
+        width: 60px;
+    }
 }
 
 /* ===================== CONTAINER CHÍNH ===================== */
@@ -439,6 +593,43 @@ body {
 
 .letter-glow {
     box-shadow: 0 0 40px var(--gold), 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Ông già Noel đu sát cạnh trái thư */
+.santa-hang {
+    position: absolute;
+    left: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    pointer-events: none;
+}
+
+.santa-hang-img {
+    width: 170px;
+    height: auto;
+    filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.5));
+    animation: santaHangSwing 2.5s ease-in-out infinite;
+    transform-origin: top right;
+}
+
+@keyframes santaHangSwing {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/* Responsive cho Santa */
+@media (max-width: 768px) {
+    .santa-hang {
+        left: -70px;
+    }
+    .santa-hang-img {
+        width: 100px;
+    }
 }
 
 /* Header lá thư */

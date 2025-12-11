@@ -23,24 +23,38 @@
 
     <div class="falling-container"></div>
 
-    <!-- Tuần lộc chạy ở dưới -->
+    <!-- HÌNH NỀN GIÁNG SINH -->
+    <div class="image-background">
+        <img src="image/bgr2.jpg" alt="Christmas Background" id="christmasBackground">
+    </div>
+
+    <!-- Mặt trăng góc phải trên -->
+    <div class="moon-decoration">
+        <img src="image/moon.png" alt="Moon" class="moon-img">
+    </div>
+
+    <!-- Cây thông bên trái -->
+    <div class="pine-tree-decoration">
+        <img src="image/pineTree.png" alt="Pine Tree" class="pine-tree-img">
+    </div>
+
+    <!-- Ngôi nhà bên phải -->
+    <div class="house-decoration">
+        <img src="image/house.png" alt="Christmas House" class="house-img">
+    </div>
+
+    <!-- Ông già Noel chạy bên phải -->
+    <div class="santa-running">
+        <img src="image/santa.png" alt="Santa Running" class="santa-running-img">
+    </div>
+
+    <!-- Tuần lộc và Santa chạy -->
     <div class="reindeer-container">
         <div class="reindeer-group">
             <img src="https://i.pinimg.com/originals/7f/1f/76/7f1f76ac29bc01ad318abbf0468b1062.gif" 
                  alt="Santa Sleigh" 
                  class="santa-sleigh-gif">
         </div>
-    </div>
-
-    <!-- VIDEO NỀN GIÁNG SINH -->
-    <div class="video-background">
-        <video autoplay muted loop playsinline id="christmasVideo">
-            <source src="music/video.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video.
-        </video>
-
-        <!-- Lớp tối nhẹ để chữ vẫn đọc được -->
-        <div class="video-overlay"></div>
     </div>
     <!-- Canvas cho tuyết rơi -->
     <canvas id="snowCanvas"></canvas>
@@ -109,7 +123,6 @@
             </div>
 
             <!-- Slideshow ảnh -->
-            <!-- Tạo thư mục /images/ và đặt các file: xmas1.jpg, xmas2.jpg, xmas3.jpg, xmas4.jpg, xmas5.jpg -->
             <div class="slideshow-container">
                 <img class="slide active" src="img/1.jpg" alt="Christmas 1">
                 <img class="slide" src="img/1.jpg" alt="Christmas 2">
