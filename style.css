@@ -131,14 +131,14 @@ body {
 /* ===================== CÂY THÔNG (TRÁI) ===================== */
 .pine-tree-decoration {
     position: fixed;
-    left: 180px;
+    left: -50px;
     bottom: 0;
     z-index: 8;
     pointer-events: none;
 }
 
 .pine-tree-img {
-    width: 250px;
+    width: 600px;
     height: auto;
     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
 }
@@ -146,14 +146,14 @@ body {
 /* ===================== NGÔI NHÀ (PHẢI) ===================== */
 .house-decoration {
     position: fixed;
-    right: 0;
+    right: -100px;
     bottom: 0;
     z-index: 8;
     pointer-events: none;
 }
 
 .house-img {
-    width: 450px;
+    width: 600px;
     height: auto;
     filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.4));
 }
